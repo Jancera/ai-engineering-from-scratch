@@ -25,3 +25,8 @@ if torch.cuda.is_available():
 
     print(f"GPU: {gpu_time:.3f}s")
     print(f"Speedup: {cpu_time / gpu_time:.0f}x")
+
+    # Currently I have an RTX 2060, that's 3 billion parameters max
+    print(
+        f"max fp16 parameter count:{(torch.cuda.get_device_properties(0).total_memory / 1e9) / 2}"
+    )
