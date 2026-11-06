@@ -1,8 +1,9 @@
-import time
 import sys
+import time
 
-import numpy as np
 import matplotlib
+import numpy as np
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -14,7 +15,7 @@ def timing_comparison():
     size = 1_000_000
 
     start = time.perf_counter()
-    python_list = [x ** 2 for x in range(size)]
+    python_list = [x**2 for x in range(size)]
     list_time = time.perf_counter() - start
     print(f"List comprehension: {list_time:.4f}s")
 
@@ -52,12 +53,19 @@ def inline_plotting():
 def dataframe_display():
     print("\n=== DataFrame Display ===\n")
 
-    df = pd.DataFrame({
-        "model": ["Linear Regression", "Random Forest", "Neural Network", "XGBoost"],
-        "accuracy": [0.72, 0.89, 0.94, 0.91],
-        "train_time_sec": [0.1, 2.3, 45.6, 8.2],
-        "parameters": [102, 50_000, 1_200_000, 25_000],
-    })
+    df = pd.DataFrame(
+        {
+            "model": [
+                "Linear Regression",
+                "Random Forest",
+                "Neural Network",
+                "XGBoost",
+            ],
+            "accuracy": [0.72, 0.89, 0.94, 0.91],
+            "train_time_sec": [0.1, 2.3, 45.6, 8.2],
+            "parameters": [102, 50_000, 1_200_000, 25_000],
+        }
+    )
 
     print("In a notebook, just typing 'df' renders a rich HTML table:\n")
     print(df.to_string(index=False))
@@ -77,8 +85,12 @@ def memory_check():
         size_mb = arr.nbytes / 1e6
         print(f"Array {name:>4s} elements: {size_mb:>8.2f} MB")
 
-    print(f"\nPython process memory: ~{sys.getsizeof(large) / 1e6:.1f} MB for the large array")
-    print("In notebooks, memory accumulates across cells. Restart the kernel to free it.")
+    print(
+        f"\nPython process memory: ~{sys.getsizeof(large) / 1e6:.1f} MB for the large array"
+    )
+    print(
+        "In notebooks, memory accumulates across cells. Restart the kernel to free it."
+    )
 
 
 def magic_command_equivalents():
@@ -98,7 +110,7 @@ def magic_command_equivalents():
     elapsed = time.perf_counter() - start
     per_call = elapsed / iterations * 1e6
 
-    print(f"Manual timing (like %%timeit): np.random.randn(10000)")
+    print("Manual timing (like %%timeit): np.random.randn(10000)")
     print(f"  {per_call:.1f} us per call ({iterations} iterations)")
 
 
