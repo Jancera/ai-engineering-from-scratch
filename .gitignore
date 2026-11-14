@@ -40,7 +40,7 @@ Thumbs.db
 *.swo
 *~
 .idea/
-.vscode/
+# .vscode/
 *.log
 
 data/
