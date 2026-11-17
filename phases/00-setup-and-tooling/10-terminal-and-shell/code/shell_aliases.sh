@@ -141,3 +141,5 @@ memhogs() {
 psg() {
     ps aux | grep -v grep | grep -i "$1"
 }
+
+cheat() { curl -Ls cheat.sh/"$1" | ${PAGER:-less -R}; }

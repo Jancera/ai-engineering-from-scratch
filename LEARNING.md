@@ -14,3 +14,8 @@
 - I searched more to undestand about how those data formats works, benefits and why behind each one of them, and seeing the memory size comparison is incredible.
 - Also the motivation behind the creation and also having the concern of creating something open-source aiming to support different products and vendors is something to be pride of, it helps a lot the community by having/supporting/following patterns.
 - The data split itself is something great and also a must, being able to split the data and process it is great and dataset streaming is also a really useful functionality to allow many machines to work with big datasets.
+
+### Lesson 10
+
+- All the aliases that are provided will for sure be useful, I also added a cheat function to the aliases file to be sourced on my terminal that will allow me call cheatsheets of commands to help me get familiar with.
+- I also exercised the data extraction and tmux setup.
